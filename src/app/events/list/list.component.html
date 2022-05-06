@@ -1,0 +1,26 @@
+<a href="/event/add" class="btn btn-primary">Create Event</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>date</th>
+            <th>Optiones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let event of events">
+            <td>{{event._id}}</td>
+            <td>{{event.title}}</td>
+            <td>{{event.eventDate}}</td>
+            <td>
+                <button class="btn btn-primary" (click)="editEvent(event._id)">Edit</button>
+                <span> | </span>
+                <button class="btn btn-danger" (click)="deleteEvent(event._id)">Delete</button>
+                <span> | </span>
+                <button class="btn btn-success" (click)="detailsEvent(event._id)">Details</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+

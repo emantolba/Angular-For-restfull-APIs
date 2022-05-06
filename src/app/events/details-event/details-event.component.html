@@ -1,0 +1,16 @@
+<h3>Details Of Event</h3>
+<label>Event Name:</label>
+<p>{{event.title}}</p>
+<label>Event Date:</label>
+<p>{{event.eventDate}}</p>
+<label>Main Speaker:</label>
+<p>{{event.mainSpeakerId.email}}</p>
+<div *ngFor="let Speaker of event.otherSpeakersIds">
+    <label>Other Speaker:</label>
+    <p>{{Speaker.email}}</p>
+</div>
+<div *ngFor="let std of event.studentsIds">
+    <label>Student:</label>
+    <p>{{std.email}}</p>
+</div>
+<a [routerLink]="['/event']" class="btn btn-primary">Back</a>

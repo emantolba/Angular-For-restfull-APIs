@@ -1,0 +1,16 @@
+<h3>Edit Event</h3>
+<label>Event Name</label>
+<input [(ngModel)]="event.title" placeholder="Event Name" />
+<label>Event Date</label>
+<input [(ngModel)]="event.eventDate" placeholder="Event Date" />
+<label>Main Speaker Email</label>
+<input [(ngModel)]="event.mainSpeakerId.email" placeholder="Event Name" />
+<label>Another Speakers Emails</label>
+<div *ngFor="let s of event.otherSpeakersIds">
+    <input [(ngModel)]="s.email" placeholder="Event Name" />
+</div>
+<label>Students Emails</label>
+<div *ngFor="let sts of event.studentsIds">
+    <input [(ngModel)]="sts.email" placeholder="Event Name" />
+</div>
+<button (click)="updateEvent()">Save</button>

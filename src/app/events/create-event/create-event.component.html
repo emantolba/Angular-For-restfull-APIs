@@ -1,0 +1,32 @@
+<p>Create Event</p>
+<div>
+    <input [(ngModel)]="event._id" type="number" />
+    <label>Event Name</label>
+    <input [(ngModel)]="event.title" placeholder="Event Name" />
+    <label>Event Date</label>
+    <input [(ngModel)]="event.eventDate" placeholder="Event Date" />
+    <label>Main Speaker Id</label>
+    <input [(ngModel)]="event.mainSpeakerId._id" placeholder="Event Name" />
+    <label>Another Speakers Ids</label><br>
+    <div *ngFor="let s of event.otherSpeakersIds">
+        <input [(ngModel)]="s._id" placeholder="Event Name" />
+    </div>
+    <label>Students Ids</label><br>
+    <div *ngFor="let sts of event.studentsIds">
+        <input [(ngModel)]="sts._id" placeholder="Event Name" />
+    </div>
+    <button (click)="addEvent()" class="btn btn-primary">Create Event</button>
+    <div>
+        <input [(ngModel)]="speakerId" />
+        <button (click)="addSpeakers()" class="btn btn-success">Add Speakers</button>
+    </div>
+   <div>
+        <input [(ngModel)]="studentId" type="number" />
+        <button (click)="addStudents()" class="btn btn-success">Add Student</button>
+   </div>
+   
+</div>
+<div>
+    <button (click)="save()" class="btn btn-info">Save Event</button>
+</div>
+
