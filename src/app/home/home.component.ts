@@ -46,10 +46,14 @@ export class HomeComponent implements OnInit {
           this.router.navigate(['/admin']);
         }
         else if(this.role=="Student login successfully!"){
-          this.student = "block";
+          this.array = JSON.parse(JSON.stringify(res));
+          console.log(this.array);
+          this.router.navigate(['/students',this.array.user._id]);
         }
         else if(this.role=="Speaker login successfully!"){
-          this.speaker = "block";
+          this.array = JSON.parse(JSON.stringify(res));
+          console.log(this.array);
+          this.router.navigate(['/speakers',this.array.user._id]);
         }
       },
       err=>{
@@ -63,5 +67,6 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/event']);
     
   }
+  
 }
 

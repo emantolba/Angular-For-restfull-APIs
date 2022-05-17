@@ -1,0 +1,25 @@
+<div>
+    <input type="button" value="Back To Home" class="btn btn-warning" (click)="back()">
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>email</th>
+            <th>Optiones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students">
+            <td>{{student._id}}</td>
+            <td>{{student.email}}</td>
+            <td>
+                <button class="btn btn-primary" (click)="editStudent(student._id)" >Edit</button>
+                <span> | </span>
+                <button class="btn btn-danger" (click)="deleteStudent(student._id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+

@@ -1,0 +1,36 @@
+<h3>Edit Speaker</h3>
+
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Email</label>
+    <input type="email" class="form-control"[(ngModel)]="speaker.email" >
+  </div>
+  <div class="mb-3" *ngIf="sp">
+    <label for="exampleFormControlInput1" class="form-label">User Name</label>
+    <input type="text" class="form-control" [(ngModel)]="speaker.userName" />
+  </div>
+  <div class="mb-3" *ngIf="sp">
+    <label for="exampleFormControlInput1" class="form-label">Password</label>
+    <input type="password" class="form-control" [(ngModel)]="speaker.password" />
+  </div>
+  <div class="mb-3">
+    <h4>Address</h4>
+  </div>
+  <div *ngFor="let address of speaker.Address">
+    <div class="mb-3">  
+      <label for="exampleFormControlInput1" class="form-label">City</label>
+      <input type="text" class="form-control" [(ngModel)]="address.city">
+    </div>
+    <div class="mb-3">
+        
+      <label for="exampleFormControlInput1" class="form-label">Street</label>
+      <input type="text" class="form-control" [(ngModel)]="address.street">
+    </div>
+    <div class="mb-3">
+        
+      <label for="exampleFormControlInput1" class="form-label">Building</label>
+      <input type="text" class="form-control" [(ngModel)]="address.building">
+    </div>
+  </div>
+  <div class="mb-3">
+      <input type="button" class="btn btn-secondary" value="Save" (click)="save()"/>
+  </div>

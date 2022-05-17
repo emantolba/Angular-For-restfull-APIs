@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EventService } from 'src/app/event.service';
-import { Address } from 'src/app/_modles/address';
+
 import { Events } from 'src/app/_modles/events';
 import { Speakers } from 'src/app/_modles/speakers';
 
@@ -14,6 +14,8 @@ import { Speakers } from 'src/app/_modles/speakers';
 export class EditEventComponent implements OnInit,OnChanges{
   event:Events = new Events(0,"","",new Speakers("","","",[],""),[],[]);
   array:any = [];
+  speakerId:string="";
+  studentId:number=0;
   constructor(public eventServ:EventService,public ar:ActivatedRoute,public router:Router) { }
 
   ngOnInit(): void {
@@ -40,5 +42,25 @@ export class EditEventComponent implements OnInit,OnChanges{
       console.log(data);
       this.router.navigate(['/event']);
     })
+  }
+  addSpeakers(){
+    this.eventServ.addSpeakerToEvent(this.event._id,this.speakerId).subscribe(data=>{
+      console.log(data);
+    });
+  }
+  addStudents(){
+    this.eventServ.addStudentToEvent(this.event._id,this.studentId).subscribe(data=>{
+      console.log(data);
+    });
+  }
+  removeStudent(id:number){
+    this.eventServ.removeStudentFromEvent(this.event._id,id).subscribe(data=>{
+      console.log(data);
+    });
+  }
+  removeSpeakers(id:string){
+    this.eventServ.removeSpeakerFromEvent(this.event._id,id).subscribe(data=>{
+      console.log(data);
+    });
   }
 }

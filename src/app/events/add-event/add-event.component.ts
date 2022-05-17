@@ -2,7 +2,7 @@ import { Component, OnChanges, OnInit } from '@angular/core';
 import { Events } from 'src/app/_modles/events';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EventService } from 'src/app/event.service';
-import { Address } from 'src/app/_modles/address';
+
 import { Speakers } from 'src/app/_modles/speakers';
 import { Students } from 'src/app/_modles/students';
 @Component({

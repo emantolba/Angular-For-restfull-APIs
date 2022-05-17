@@ -50,4 +50,27 @@ export class EventService {
       "id":id
     }});
   }
+  removeStudentFromEvent(eventId:number,studentId:number){
+    return this.http.post(this.baseURL+"/deletestudent",{
+      "id":eventId,
+      "studentId":studentId
+    });
+  }
+  removeSpeakerFromEvent(eventId:number,speakerId:string){
+    return this.http.post(this.baseURL+"/deletespeaker",{
+      "id":eventId,
+      "speakerId":speakerId
+    });
+  }
+  getEventsForStudent(studentId:number){
+    return this.http.get(this.baseURL+"/students/"+studentId);
+  }
+  getEventsForSpeakers(speakerId:string){
+    return this.http.get(this.baseURL+"/speakers/"+speakerId);
+  }
+  speakerDeclineEvent(eventId:number,speakerId:string){
+    return this.http.put(this.baseURL+"/speakers/"+speakerId,{
+      "id":eventId
+    });
+  }
 }

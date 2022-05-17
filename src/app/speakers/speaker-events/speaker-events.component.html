@@ -1,4 +1,4 @@
-<a href="/event/add" class="btn btn-primary">Create Event</a>
+
 <table class="table">
     <thead>
         <tr>
@@ -14,11 +14,7 @@
             <td>{{event.title}}</td>
             <td>{{event.eventDate}}</td>
             <td>
-                <button class="btn btn-primary" (click)="editEvent(event._id)">Edit</button>
-                <span> | </span>
-                <button class="btn btn-danger" (click)="deleteEvent(event._id)">Delete</button>
-                <span> | </span>
-                <button class="btn btn-success" (click)="detailsEvent(event._id)">Details</button>
+                <button class="btn btn-danger" (click)="remove(event._id,stdID)">Delete</button>
             </td>
         </tr>
     </tbody>
@@ -26,3 +22,4 @@
 <div>
     <input type="button" value="Back To Home" class="btn btn-warning" (click)="back()">
 </div>
+

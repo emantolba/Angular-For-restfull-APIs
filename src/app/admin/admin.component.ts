@@ -16,4 +16,10 @@ export class AdminComponent implements OnInit {
     this.router.navigate(['/event']);
     
   }
+  studentList(){
+    this.router.navigate(['/admin/student']);
+  }
+  speakersList(){
+    this.router.navigate(['/speakers']);
+  }
 }

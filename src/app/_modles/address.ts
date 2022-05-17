@@ -1,4 +1,4 @@
-export class Address {
+export class Add {
     constructor(
         public _id: string,
         public street: string,

@@ -50,5 +50,7 @@ export class ListComponent implements OnInit , OnChanges {
   detailsEvent(id:number){
    this.router.navigate(['/event/details',id]);
   }
-
+  back(){
+    this.router.navigate(['/admin']);
+  }
 }

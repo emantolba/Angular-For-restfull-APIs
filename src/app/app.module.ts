@@ -7,16 +7,21 @@ import { CoreModule } from './core/core.module';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { LoginInterceptor } from './login.interceptor';
-import { StudentComponent } from './student/student.component';
 import { EventsModule } from './events/events.module';
 import { AdminComponent } from './admin/admin.component';
+import { StudentsModule } from './students/students.module';
+import { SpeakersModule } from './speakers/speakers.module';
+import { StudentHomeComponent } from './student-home/student-home.component';
+import { SpeakerHomeComponent } from './speaker-home/speaker-home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    StudentComponent,
-    AdminComponent
+    AdminComponent,
+    StudentHomeComponent,
+    SpeakerHomeComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,9 @@ import { AdminComponent } from './admin/admin.component';
     CoreModule,
     HttpClientModule,
     FormsModule,
-    EventsModule
+    EventsModule,
+    StudentsModule,
+    SpeakersModule
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:LoginInterceptor,multi:true}],
   bootstrap: [AppComponent]

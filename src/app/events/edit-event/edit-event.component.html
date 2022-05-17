@@ -8,9 +8,21 @@
 <label>Another Speakers Emails</label>
 <div *ngFor="let s of event.otherSpeakersIds">
     <input [(ngModel)]="s.email" placeholder="Event Name" />
+    <button (click)="removeSpeakers(s._id)" class="btn btn-danger">Remove</button>
 </div>
 <label>Students Emails</label>
 <div *ngFor="let sts of event.studentsIds">
     <input [(ngModel)]="sts.email" placeholder="Event Name" />
+    <button (click)="removeStudent(sts._id)" class="btn btn-danger">Remove</button>
 </div>
-<button (click)="updateEvent()">Save</button>
+<div >
+    <h5>Add Speakers</h5>
+    <input [(ngModel)]="speakerId"/>
+    <button (click)="addSpeakers()" class="btn btn-success">Add Speaker</button>
+</div>
+<div>
+    <h5>Add Students</h5>
+    <input [(ngModel)]="studentId"/>
+    <button (click)="addStudents()" class="btn btn-success">Add Student</button>
+</div>
+<button (click)="updateEvent()" class="btn btn-success">Save</button>

@@ -1,0 +1,16 @@
+<p>edit-std works!</p>
+<div>
+    <label>Student ID</label>
+    <label>{{student._id}}</label>
+    <br>
+</div>
+<div>
+    <label>Student Email</label>
+    <input type="text" [(ngModel)]="student.email"  />
+    <br>
+</div>
+<div *ngIf="std;">
+    <label>Student Password</label>
+    <input type="password" [(ngModel)]="student.password"  />
+</div>
+<input type="button" value="Update" (click)="edit()" class="btn btn-primary" />
